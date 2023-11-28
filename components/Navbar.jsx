@@ -1,7 +1,12 @@
+'use client'
+
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 
 export default function Navbar() {
+  const { status, data: session } = useSession()
+  console.log(session)
   return (
     <nav className="bg-red-900 flex flex-row justify-between items-center px-8 py-4">
       <Link href="/" className="text-white text-lg font-bold">
